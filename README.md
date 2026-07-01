@@ -27,25 +27,30 @@ pip install matplotlib
 To verify the installation and check the version:
 
 Python
-import matplotlib
+```import matplotlib
 print(matplotlib.__version__)
+```
 Most plotting actions are done using the pyplot module, typically imported with the alias plt:
 
 Python
+```
 import matplotlib.pyplot as plt
+
 import numpy as np # Recommended for handling data arrays efficiently
+```
 2. Basic Plotting
 To create a standard line graph, map pairs of X and Y coordinates. Remember to call plt.show() to render the output window.
-
+```
 Python
 x = np.array([2023, 2024, 2025, 2026])
 y = np.array([15, 25, 30, 20])
 
 plt.plot(x, y)
 plt.show()
+```
 3. Plot Customization (Lines & Markers)
 You can customize line styles and point markers using arguments inside plt.plot(). Alternatively, bundle configurations into a dictionary and unpack it using .
-
+```
 Python
 # Customization using a styling dictionary
 line_style = {
@@ -59,9 +64,10 @@ line_style = {
 
 plt.plot(x, y, **line_style, color="#003366")
 plt.show()
+```
 4. Labels, Titles, and Ticks
 Make graphs readable by giving them context with explicitly styled titles, axis labels, and targeted ticks.
-
+```
 Python
 plt.plot(x, y)
 
@@ -76,16 +82,18 @@ plt.xticks(x)
 plt.tick_params(axis="both", colors="#003366")
 
 plt.show()
+```
 5. Grid Lines
 Grid lines introduce reference metrics behind data points for improved assessment.
-
+```
 Python
 plt.plot(x, y)
 plt.grid(axis='y', linestyle='--', linewidth=1.5, color='lightgray') # Tracks Y-axis changes
 plt.show()
+```
 6. Bar Charts
 Bar charts contrast categorical distributions. Toggle the standard plt.bar() function to plt.barh() for a horizontal chart alternative.
-
+```
 Python
 categories = np.array(["Grains", "Fruit", "Vegetables", "Protein", "Dairy"])
 values = np.array([4, 3, 2, 5, 3])
@@ -94,9 +102,10 @@ plt.bar(categories, values, color="skyblue", edgecolor="black")
 plt.xlabel("Food Category")
 plt.ylabel("Quantity (Servings)")
 plt.show()
+```
 7. Pie Charts
 Pie charts map parts-to-a-whole percentage distributions.
-
+```
 Python
 labels = ["Freshman", "Sophomore", "Junior", "Senior"]
 students = [300, 250, 275, 225]
@@ -106,9 +115,10 @@ explode = [0, 0, 0, 0.1] # Highlights 'Senior' slice by lifting it out
 plt.pie(students, labels=labels, autopct="%1.1f%%", colors=colors, explode=explode, shadow=True, startangle=90)
 plt.title("College Student Distribution")
 plt.show()
+```
 8. Scatter Plots
 Scatter charts plot correlations between variables. Add a legend to organize multi-class point systems.
-
+```
 Python
 hours_studied = [1, 2, 3, 5, 6, 7, 8]
 exam_grades = [60, 62, 68, 75, 82, 85, 87]
@@ -118,9 +128,11 @@ plt.xlabel("Hours Studied")
 plt.ylabel("Grade")
 plt.legend()
 plt.show()
+
+```
 9. Histograms
 Histograms summarize continuous numeric distributions by bucketing them into range intervals called "bins."
-
+```
 Python
 # Simulating a normal curve distribution around a median grade of 80
 scores = np.random.normal(loc=80, scale=10, size=100)
@@ -130,9 +142,11 @@ plt.hist(scores, bins=10, color="lightgreen", edgecolor="black")
 plt.xlabel("Scores Range")
 plt.ylabel("Number of Students")
 plt.show()
+
+```
 10. Subplots
 Subplots isolate multi-graph grids within a uniform canvas footprint, tracking index parameters unpacked from plt.subplots().
-
+```
 Python
 # Creates a 2x2 grid layout matrix
 fig, axes = plt.subplots(nrows=2, ncols=2)
@@ -157,9 +171,10 @@ axes[1, 1].set_title("x ^ 4")
 
 plt.tight_layout() # Mitigates axis overlapping collisions
 plt.show()
+```
 11. Integrating Matplotlib with Pandas
 You can quickly clean structured database records via pandas and map data counts straight onto a Matplotlib layout.
-
+```
 Python
 import pandas as pd
 
@@ -176,3 +191,4 @@ plt.xlabel("Count")
 plt.ylabel("Type")
 plt.tight_layout()
 plt.show()
+```
