@@ -23,6 +23,7 @@ A comprehensive starter guide to data visualization in Python using **Matplotlib
 To install Matplotlib, run the following pip command in your terminal:
 ```bash
 pip install matplotlib
+```
 To verify the installation and check the version:
 
 Python
